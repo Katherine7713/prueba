@@ -4,7 +4,7 @@ import type { CreateDishDto, Dish, UpdateDishDto } from "../types/dish";
 const TABLE = "Dish";
 
 export const dishApi = {
-    /** Obtiene todos los proyectos ordenados por fecha de creación */
+    
     async getAll(): Promise<Dish[]> {
         const { data, error } = await supabase
             .from(TABLE)
@@ -15,7 +15,7 @@ export const dishApi = {
         return data ?? [];
     },
 
-    /** Obtiene un proyecto por su ID */
+
     async getById(id: string): Promise<Dish> {
         const { data, error } = await supabase
         .from(TABLE)
@@ -27,7 +27,6 @@ export const dishApi = {
         return data;
     },
 
-    /** Crea un nuevo plato */
     async create(dto: CreateDishDto): Promise<Dish> {
         const payload: any = { ...dto };
         
