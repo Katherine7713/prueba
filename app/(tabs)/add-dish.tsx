@@ -126,7 +126,7 @@ export default function AddDish() {
                 onPress={pickImage}
                 style={styles.buttonSecondary}
             >
-                <Text style={styles.buttonText}>📷 Galería</Text>
+                <Text style={styles.buttonText}>Galería</Text>
             </TouchableOpacity>
 
             {/* CÁMARA */}
@@ -134,7 +134,7 @@ export default function AddDish() {
                 onPress={takePhoto}
                 style={styles.button}
             >
-                <Text style={styles.buttonText}>📸 Cámara</Text>
+                <Text style={styles.buttonText}>Cámara</Text>
             </TouchableOpacity>
 
             {photo && (
@@ -150,7 +150,7 @@ export default function AddDish() {
                     style={styles.submitButton}
                 >
                     <Text style={styles.buttonText}>
-                        ✅ Registrar Plato
+                        Registrar Plato
                     </Text>
                 </TouchableOpacity>
             </Animated.View>

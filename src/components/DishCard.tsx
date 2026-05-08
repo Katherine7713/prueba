@@ -11,7 +11,7 @@ export default function DishCard({
     item: Dish;
     onDelete: (id: string) => void;
 }) {
-    if (!item) return null; // 🔥 FIX CRÍTICO
+    if (!item) return null; 
 
     return (
         <Animated.View exiting={FadeOut}>

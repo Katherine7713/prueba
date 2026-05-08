@@ -2,7 +2,6 @@ import { QueryClient, QueryClientProvider } from "@tanstack/react-query";
 import { Stack } from "expo-router";
 import { GestureHandlerRootView } from "react-native-gesture-handler";
 
-// 🔥 crear cliente (fuera del componente)
 const queryClient = new QueryClient();
 
 export default function RootLayout() {
