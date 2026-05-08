@@ -1,0 +1,53 @@
+import React from "react";
+import { Image, Text, View } from "react-native";
+import { Swipeable } from "react-native-gesture-handler";
+import Animated, { FadeOut } from "react-native-reanimated";
+import { Dish } from "../types/dish";
+
+export default function DishCard({
+    item,
+    onDelete,
+}: {
+    item: Dish;
+    onDelete: (id: string) => void;
+}) {
+    if (!item) return null; // 🔥 FIX CRÍTICO
+
+    return (
+        <Animated.View exiting={FadeOut}>
+            <Swipeable
+                renderRightActions={() => (
+                    <View
+                        style={{
+                            backgroundColor: "red",
+                            justifyContent: "center",
+                            padding: 20,
+                            borderRadius: 10,
+                        }}
+                    />
+                )}
+                onSwipeableOpen={() => onDelete(item?.id)}
+            >
+                <View
+                    style={{
+                        margin: 10,
+                        padding: 10,
+                        backgroundColor: "#fff",
+                        borderRadius: 15,
+                    }}
+                >
+                    <Image
+                        source={{ uri: item.photo_uri || "" }}
+                        style={{
+                            width: "100%",
+                            height: 200,
+                            borderRadius: 10,
+                        }}
+                    />
+                    <Text>{item.name}</Text>
+                    <Text>{item.city}</Text>
+                </View>
+            </Swipeable>
+        </Animated.View>
+    );
+}
